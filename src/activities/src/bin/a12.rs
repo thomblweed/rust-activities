@@ -10,16 +10,26 @@
 // * Implement functionality on the box struct to create a new box
 // * Implement functionality on the box struct to print the characteristics
 
-struct Box {
-    dimensions: i32,
-    weight: i32,
-    color: Color,
-}
-
 enum Color {
     RED,
     BLUE,
     GREEN,
+}
+
+impl Color {
+    fn print(&self) {
+        match self {
+            Color::RED => println!("Color: RED"),
+            Color::BLUE => println!("Color: BLUE"),
+            Color::GREEN => println!("Color: GREEN"),
+        }
+    }
+}
+
+struct Box {
+    dimensions: i32,
+    weight: i32,
+    color: Color,
 }
 
 impl Box {
@@ -33,7 +43,7 @@ impl Box {
     fn print(&self) {
         println!("Dimensions: {:?}", self.dimensions);
         println!("Weight: {:?}", self.weight);
-        println!("Color: {:?}", self.color);
+        self.color.print();
     }
 }
 
