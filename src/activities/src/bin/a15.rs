@@ -10,7 +10,6 @@
 
 fn main() {
     // * Use an enum for the tickets with data associated with each variant
-    #[derive(Debug)]
     enum Ticket {
         Backstage(String, f64),
         VIP(String, f64),
